@@ -41,8 +41,8 @@ def download(folder_dst, pdf, sd, hd):
         ul = div.find('ul')
         li = ul.find_all('li')
 
-        title = unicode(li[0].text)
-        session = unicode(li[1].text)
+        title = li[0].text
+        session = li[1].text
         p = div.find('p', 'download')
         if not p:
             continue
