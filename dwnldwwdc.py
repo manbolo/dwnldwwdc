@@ -28,13 +28,13 @@ def save(url, dst, force=False):
 def download(folder_dst, pdf, sd, hd):
     """Parse the WWDC html page at https://developer.apple.com/wwdc/videos/.
     The page has been downloaded locally to prevent signin etc... Not the
-    better solution, bu a pragmatic one"""
+    better solution, but a pragmatic one."""
     html_src = os.path.abspath(os.path.join(os.path.dirname(__file__), 'wwdc2013.html'))
 
     try:
         soup = BeautifulSoup(open(html_src, 'r').read())
     except IOError:
-        print("No wwdc2013.html here! Download the file from: ")
+        print("No wwdc2013.html here! Download the file from https://raw.github.com/manbolo/dwnldwwdc/master/wwdc2013.html")
         return -1
 
     for div in soup.find_all('div', 'description active'):
